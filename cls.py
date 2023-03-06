@@ -1,4 +1,6 @@
+from cgitb import text
 from contextlib import AsyncExitStack
+from distutils import text_file
 import tkinter
 from tkinter import *
 root=None
@@ -16,13 +18,7 @@ class Buts:
         bbts = Button(root,width=10,height=1,text= self.c,command=self.d)
         bbts.place(x=self.a,y=self.b)
 
-class Entr:
-    def __init__(self,a,b):
-        self.a = a
-        self.b = b
 
-    def make_entr(self) :
-        enttr = Entry(root,width=20) 
-        enttr.place(x=self.a,y=self.b)  
+
 
             
