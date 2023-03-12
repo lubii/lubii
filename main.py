@@ -2,12 +2,26 @@ import tkinter
 from msilib.schema import Class
 from re import T
 from tkinter import *
+from tkinter import filedialog
 from turtle import width
 #from tkinter import Button, Entry, Tk,Text
 #from turtle import width
 #from typing import Text
 from cls import Buts
 root = Tk()
+
+
+def get_file():
+
+    root.filename = filedialog.askopenfile(initialdir="FileFolder",title="Vyber súbor",filetypes=(("txt_files","*.txt "),("all_files","*.*")))
+    f_name = root.filename
+    print(f_name)
+    
+    with open("f_name","a") as file:
+        file.read()
+
+
+
 xy =["500x400","500x450","500x500","500x550","500x600"]
 
 f=0
@@ -60,7 +74,8 @@ b2= Buts(30,80,"Pridaj",tt_get)
 b2.make_buts()
 b3= Buts(30,350,"Koniec",root.quit)
 b3.make_buts()
-
+b6= Buts(30,320,"Načítať súbor",get_file)
+b6.make_buts()
 
 
 
