@@ -1,0 +1,13 @@
+top= Toplevel(root)
+top.config(width,height)  ------dalsie okno v okne
+
+
+		praca so subormy
+
+with pen("FileFolder/data_files.txt","r") as file:
+		data = file.readline(1)  --- cita riadky(pocet znakov)
+		data = file.readlines  --- cita cely subor
+
+with open ("FileFolder/data_files.txt","w") as files:
+		words = ["ahoj","auto","dom"]
+		file.write(words)

@@ -12,13 +12,17 @@ root = Tk()
 
 
 def get_file():
-
-    root.filename = filedialog.askopenfile(initialdir="FileFolder",title="Vyber súbor",filetypes=(("txt_files","*.txt "),("all_files","*.*")))
+    tt.delete(1.0,END)
+    root.filename = filedialog.askopenfilenames(initialdir="FileFolder",title="Vyber súbor",filetypes=(("txt_files","*.txt "),("all_files","*.*")))
     f_name = root.filename
-    print(f_name)
+    #print(f_name[0])
+    f_name1 = f_name[0]
     
-    with open("f_name","a") as file:
-        file.read()
+
+    with open(f_name1,"r") as file:
+       
+       txt_file = (file.read())
+       tt.insert(END,txt_file)
 
 
 
@@ -68,13 +72,13 @@ def min():
 
 
 
-b1= Buts(30,50,"Zapíš",tlac)
+b1= Buts(30,50,"Načítaj súbor",get_file)
 b1.make_buts()
-b2= Buts(30,80,"Pridaj",tt_get)
+b2= Buts(30,80,"Ulož",tt_get)
 b2.make_buts()
 b3= Buts(30,350,"Koniec",root.quit)
 b3.make_buts()
-b6= Buts(30,320,"Načítať súbor",get_file)
+b6= Buts(30,320,"Vymaž",tlac)
 b6.make_buts()
 
 
